@@ -11,5 +11,6 @@ class SubscribeSerializer(serializers.ModelSerializer):
             'plan',
             'start_date',
             'end_date',
+            'status',
         )
-        read_only_fields = ('end_date',)
+        read_only_fields = ('end_date', 'status')
