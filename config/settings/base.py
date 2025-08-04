@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
 
     # Local apps
+    'project_apps.subscriptions',
 ]
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#middleware
@@ -163,7 +164,7 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
     ],
-    # 'DEFAULT_PAGINATION_CLASS': 'project_apps.common.api.pagination.StandardResultsSetPagination',
+    'DEFAULT_PAGINATION_CLASS': 'project_apps.common.api.pagination.StandardResultsSetPagination',
     'DEFAULT_FILTER_BACKENDS': [
         'rest_framework.filters.SearchFilter',
         'django_filters.rest_framework.DjangoFilterBackend',
