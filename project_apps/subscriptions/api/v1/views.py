@@ -5,9 +5,9 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from project_apps.subscriptions.api.v1.serializers import SubscribeSerializer, ExchangeRateLogSerializer
-from project_apps.subscriptions.api.v1.utils import fetch_exchange_rate
 from project_apps.subscriptions.enums import SubscriptionStatus
 from project_apps.subscriptions.models import Subscription, ExchangeRateLog
+from project_apps.subscriptions.utils import fetch_exchange_rate
 
 
 class SubscribeCreateAPIView(CreateAPIView):
