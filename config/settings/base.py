@@ -69,7 +69,6 @@ FIXTURE_DIRS = [str(APPS_DIR / 'fixtures')]
 # https://docs.djangoproject.com/en/5.1/topics/auth/customizing/#specifying-authentication-backends
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.AllowAllUsersModelBackend',
-    'archive2024.accounts.backends.MobileNumberBackend',
 ]
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-password-validators
