@@ -26,5 +26,4 @@ CELERY_TASK_EAGER_PROPAGATES = True
 # For development, emails will be printed to the console
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-# https://django-sms.readthedocs.io/en/latest/#sms-backends
-SMS_BACKEND = 'sms.backends.console.SmsBackend'
+EXCHANGE_RATE_API_KEY = env('EXCHANGE_RATE_API_KEY')
