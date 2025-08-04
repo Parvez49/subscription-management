@@ -13,7 +13,7 @@ from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 
 api_url_patterns = (
     [
-
+        path('', include('project_apps.subscriptions.api.urls')),
     ], 'api'
 )
 
