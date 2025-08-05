@@ -99,3 +99,50 @@ List My Subscriptions
 ```
 GET /api/v1/subscriptions/
 ```
+
+## Project Structure
+
+```
+<repository_root>/
+├── config/
+│   ├── settings/
+│   │   ├── __init__.py
+│   │   ├── base.py
+│   │   ├── local.py
+│   │   └── production.py
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── celery.py
+│   ├── urls.py
+│   └── wsgi.py
+├── <django_project_root>/
+│   ├── <app_name>/
+│   │   ├── api/
+│   │   │   ├── <version>/
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── filters.py
+│   │   │   │   ├── serializers.py
+│   │   │   │   ├── urls.py
+│   │   │   │   └── views.py
+│   │   │   ├── __init__.py
+│   │   │   └── urls.py
+│   │   ├── migrations/
+│   │   ├── __init__.py
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── models.py
+│   │   ├── tasks.py
+│   │   ├── tests.py
+│   │   ├── signals.py
+│   │   ├── utils.py
+│   │   └── views.py
+│   ├── __init__.py/
+│   └── ...
+├── requirements/
+│   ├── base.txt
+│   ├── local.txt
+│   └── production.txt
+├── venv/
+├── .env
+├── manage.py
+```
