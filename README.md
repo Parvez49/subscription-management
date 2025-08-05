@@ -63,6 +63,7 @@ Note: Do not need to run Celery/Beat for development/testing purposes — tasks 
 
 
 ## 🧪 API Endpoints
+Api Documentation: http://localhost:8000/schema/swagger-ui/
 ### 🔐 Auth
 Register
 ```
