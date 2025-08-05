@@ -147,3 +147,31 @@ GET /api/v1/subscriptions/
 ├── .env
 ├── manage.py
 ```
+
+## 🐳 Docker Development Setup
+1. 🧪 Environment Variables
+```
+DEBUG=True
+SECRET_KEY=your-secret-key
+DJANGO_SETTINGS_MODULE=config.settings.local
+REDIS_URL=redis://redis:6379/0
+```
+2. 🚀 Run the Project
+To build and start the containers:
+```
+docker-compose up --build
+```
+
+### 🛠 Common Commands
+🔁 Run migrations:
+```
+docker-compose exec subscription-management-api python manage.py migrate
+```
+👤 Create superuser:
+```
+docker-compose exec subscription-management-api python manage.py createsuperuser
+```
+🧪 Running Management Commands to load default plan
+```
+docker-compose exec subscription-management-api python manage.py load_plans
+```
