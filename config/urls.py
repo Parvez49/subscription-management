@@ -19,6 +19,7 @@ api_url_patterns = (
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('project_apps.subscriptions.urls')),
 
     # api documentation
     path('schema/', SpectacularAPIView.as_view(api_version='v1'), name='schema'),
