@@ -36,6 +36,7 @@ INSTALLED_APPS = [
 
     # Local apps
     'project_apps.subscriptions',
+    'project_apps.accounts',
 ]
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#middleware
