@@ -1,0 +1,44 @@
+# Pull official base image
+FROM python:3.12-slim
+
+# Set working directory
+WORKDIR /app
+
+# Set env variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+ENV DJANGO_SETTINGS_MODULE=config.settings.production
+
+# Install system dependencies
+RUN apt-get update && \
+    apt-get install -y gcc default-libmysqlclient-dev pkg-config libmagic1 libffi-dev netcat-openbsd && \
+    rm -rf /var/lib/apt/lists/*
+
+# Install Python dependencies
+COPY ../requirements ./requirements
+RUN pip install --upgrade pip \
+    && pip install -r ./requirements/production.txt
+
+# Copy project files
+COPY ../ /app
+
+# Copy entrypoint script
+COPY docker/entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
+
+
+
+
+
+
+
+
+
+# Collect static files at build time (optional)
+# RUN export DJANGO_SETTINGS_MODULE=config.settings.production
+# RUN python manage.py collectstatic --noinput
+
+# Use Gunicorn in production
+# CMD ["gunicorn", "config.wsgi:application", "--bind", "0.0.0.0:8000"]
