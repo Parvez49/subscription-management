@@ -176,3 +176,34 @@ docker-compose exec subscription-management-api python manage.py createsuperuser
 ```
 docker-compose exec subscription-management-api python manage.py load_plans
 ```
+
+## 🚀 Docker Production Setup 
+1. 🧪 Environment Variables
+```
+DEBUG=False
+SECRET_KEY=your-secret-key
+DJANGO_SETTINGS_MODULE=config.settings.production
+REDIS_URL=redis://redis:6379/0
+CORS_ALLOW_ALL_ORIGINS=False
+CORS_ALLOWED_ORIGINS=<>
+DJANGO_CSRF_TRUSTED_ORIGINS=<>
+
+# Database 
+MYSQL_DATABASE=<>
+MYSQL_USER=<>
+0MYSQL_PASSWORD=<>
+MYSQL_ROOT_PASSWORD=<>
+
+DATABASE_URL=mysql://db_user:db_password@mysql_host:3306/db_name
+```
+2. 🚀 Run the Project
+To build and start the containers:
+```
+docker compose -f docker-compose.prod.yml up --build
+```
+Api documentation: http://localhost:8000/schema/swagger-ui/
+
+⚙️ Stop
+```
+docker-compose -f docker-compose.prod.yml down
+```
