@@ -35,6 +35,7 @@ python manage.py migrate
 python manage.py load_plans
 ```
 6. Run development server
+   copy .env.local to .env and set variable 
 ```
 python manage.py runserver
 ```
